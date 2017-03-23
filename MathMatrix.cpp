@@ -41,7 +41,7 @@ MathMatrix::MathMatrix(const vector<vector<int>>& mat)			//Copy Constructor
 	this->mat = mat;
 }
 
-MathMatrix::MathMatrix(int numRows, int numCols, int initialValue)		//given initial values
+MathMatrix::MathMatrix(int numRows, int numCols, int initialValue)	//given initial values
 {
 
 	vector<vector<int>> v(numRows, vector<int>(numCols));
@@ -56,9 +56,8 @@ MathMatrix::MathMatrix(int numRows, int numCols, int initialValue)		//given init
 
 }
 
-MathMatrix::~MathMatrix()				//
+MathMatrix::~MathMatrix()				
 {
-	/*TODO: ADD YOUR CODE HERE*/
 }
 
 void MathMatrix::changeElement(int row, int col, int newValue)
@@ -78,7 +77,7 @@ int MathMatrix::getVal(int row, int col)
 {
 	return(this->mat[row][col]);
 }
-MathMatrix MathMatrix::add(const MathMatrix& rightHandSide)				// Assuming the two matrices are the same size
+MathMatrix MathMatrix::add(const MathMatrix& rightHandSide)			// Assuming the two matrices are the same size
 {
 	MathMatrix result;
 	result.mat = this->mat;
@@ -105,23 +104,9 @@ MathMatrix MathMatrix::subtract(const MathMatrix& rightHandSide)		// Assuming th
 }
 MathMatrix MathMatrix::multiply(const MathMatrix& rightHandSide)		// Assuming the two matrices are compatible
 {
-	MathMatrix temp = rightHandSide;									//temp is a copy of rightHandSide
+	MathMatrix temp = rightHandSide;					//temp is a copy of rightHandSide
 
 	vector<vector<int>> v(this->numRows(), vector<int>(temp.numCols()));
-
-	//for (int x = 0; x < this->numRows(); x++) {
-
-	//	for (int y = 0; y < temp.numCols(); y++) {
-	//		int count = 0;
-
-	//		for (int z = 0; z < this->numCols(); z++) {
-	//			count += this->mat[y][z] * temp.mat[z][x];
-	//		}
-
-	//		v[y][x] = count;
-	//	}
-
-	//}
 
 	for (int x = 0; x < temp.numCols(); x++) {
 
@@ -159,27 +144,20 @@ bool MathMatrix::equals(const MathMatrix& rightHandSide)
 MathMatrix MathMatrix:: operator+(const MathMatrix& rightHandSide)
 {
 	return(this->add(rightHandSide));
-	//MathMatrix result;
-	//return result;
 }
 
 MathMatrix MathMatrix:: operator-(const MathMatrix& rightHandSide)
 {
 	return(this->subtract(rightHandSide));
-	//MathMatrix result;
-	//return result;
 }
 MathMatrix MathMatrix:: operator*(const MathMatrix& rightHandSide)
 {
 	return(this->multiply(rightHandSide));
-	//MathMatrix result;
-	//return result;
 }
 
 bool MathMatrix:: operator==(const MathMatrix& rightHandSide)
 {
 	return(this->equals(rightHandSide));
-	//return false;
 }
 
 MathMatrix MathMatrix::scale(int factor)
