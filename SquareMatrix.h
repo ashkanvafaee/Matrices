@@ -13,11 +13,6 @@ using namespace std;
 
 class SquareMatrix : public MathMatrix {
 private:
-	/* 
-	   add any private member variables you need 
-	   that are not inherited from the MathMatrix
-	   class
-	*/
 public:
 
 	/*
