@@ -1,3 +1,5 @@
+//main.c: used to test functionality of MathMatrix and SquareMatrix methods.
+
 //#include "MathMatrix.h"
 #include "SquareMatrix.h"
 using namespace std;
