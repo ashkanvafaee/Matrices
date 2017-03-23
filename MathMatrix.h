@@ -14,10 +14,8 @@ using namespace std;
 class MathMatrix
 {
 protected:
-	/* add any protected member variables you need */
 	vector<vector<int>> mat;
 private:
-	/* add any private member variables you need */
 public:
 
 	/*
