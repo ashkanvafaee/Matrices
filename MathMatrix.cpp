@@ -60,23 +60,32 @@ MathMatrix::~MathMatrix()
 {
 }
 
+//Changes a specifc element in the array
 void MathMatrix::changeElement(int row, int col, int newValue)
 {
 	this->mat[row][col] = newValue;
 	return;
 }
+
+//Gets the number of rows of the array
 int MathMatrix::numRows()
 {
 	return (this->mat.size());
 }
+
+//Gets the number of columns of the array
 int MathMatrix::numCols()
 {
 	return(this->mat[0].size());
 }
+
+//gets the value at a specific index in the array
 int MathMatrix::getVal(int row, int col)
 {
 	return(this->mat[row][col]);
 }
+
+//Returns an array that is the sum of two arrays
 MathMatrix MathMatrix::add(const MathMatrix& rightHandSide)			// Assuming the two matrices are the same size
 {
 	MathMatrix result;
@@ -90,6 +99,8 @@ MathMatrix MathMatrix::add(const MathMatrix& rightHandSide)			// Assuming the tw
 
 	return result;
 }
+
+//Returns an array that is the difference of two arrays
 MathMatrix MathMatrix::subtract(const MathMatrix& rightHandSide)		// Assuming the two matrices are the same size
 {
 	MathMatrix result;
@@ -102,6 +113,8 @@ MathMatrix MathMatrix::subtract(const MathMatrix& rightHandSide)		// Assuming th
 	}
 	return result;
 }
+
+//Returns an array that is the product of two arrays
 MathMatrix MathMatrix::multiply(const MathMatrix& rightHandSide)		// Assuming the two matrices are compatible
 {
 	MathMatrix temp = rightHandSide;					//temp is a copy of rightHandSide
@@ -131,6 +144,7 @@ MathMatrix MathMatrix::multiply(const MathMatrix& rightHandSide)		// Assuming th
 	return result;
 }
 
+//Determines if two arrays are equal
 bool MathMatrix::equals(const MathMatrix& rightHandSide)
 {
 	if (this->mat == rightHandSide.mat) {
@@ -141,6 +155,8 @@ bool MathMatrix::equals(const MathMatrix& rightHandSide)
 	}
 }
 
+
+//Overloaded operations
 MathMatrix MathMatrix:: operator+(const MathMatrix& rightHandSide)
 {
 	return(this->add(rightHandSide));
@@ -160,6 +176,7 @@ bool MathMatrix:: operator==(const MathMatrix& rightHandSide)
 	return(this->equals(rightHandSide));
 }
 
+//Multiplies all elements of an array by a given value and returns a new array.
 MathMatrix MathMatrix::scale(int factor)
 {
 	vector<vector<int>> v = this->mat;
@@ -174,6 +191,8 @@ MathMatrix MathMatrix::scale(int factor)
 	result.mat = v;
 	return result;
 }
+
+//Returns a new array that is the transpose of the given array.
 MathMatrix MathMatrix::getTranspose()
 {
 	vector<vector<int>> v(this->numCols(), vector<int>(this->numRows()));
