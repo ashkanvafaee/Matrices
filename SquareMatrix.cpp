@@ -33,9 +33,8 @@ SquareMatrix::SquareMatrix(int size, int initialValue)
 	this->mat = v;
 }
 
-SquareMatrix::~SquareMatrix()						// 
+SquareMatrix::~SquareMatrix()						
 {
-	/*TODO: ADD YOUR CODE HERE*/
 }
 
 SquareMatrix SquareMatrix::createIdentityMatrix(int size)
@@ -61,8 +60,8 @@ int SquareMatrix::getDeterminant()
 		return((mat[0][0] * mat[1][1]) - (mat[0][1] * mat[1][0]));
 	}
 
+	// 3x3 Matrix
 	return((mat[0][0] * mat[1][1] * mat[2][2]) + (mat[0][1] * mat[1][2] * mat[2][0]) + (mat[0][2] * mat[1][0] * mat[2][1]) - (mat[0][2] * mat[1][1] * mat[0][2]) - (mat[0][1] * mat[1][0] * mat[2][2]) - (mat[0][0] * mat[1][2] * mat[2][1]));
-																// ^ 3x3 Matrix
 
 }
 
